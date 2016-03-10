@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Time Dilation Calculator</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Time Dilation Calculator">
+  <meta name="author" content="Danny Cohen">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Time Dilation Calculator</h1>
+    <h2>The effects of travelling at the Speed of light on time</h2>
+    <p>Danny Cohen<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Agenda</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>Introduction: Why time dilation ?</li>
+<li>Example scenario</li>
+<li>Using the Time Dilation Calculator</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>1. Introduction: Why time dilation ?</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>According to theory of relativity, traveling at any speed (compared to a startionary observer) casues time to dilate from the perspective of the observer</li>
+<li>This time dilation effect exists at all speeds, but is undetectable at small speed</li>
+<li>As the traveling speed increases the time dilation effect becomes more noticeable </li>
+<li>The following equation calculates the time dilation, relative to traveling speed:</li>
+</ul>
+
+<p><br/>
+<img src="time_dilation_equation.jpg" alt="Time Dilation Equation" style="width: 400px;"/>
+<br/>Source: <a href="https://www.pinterest.com/pin/69876231694436244">https://www.pinterest.com/pin/69876231694436244</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>2. Example scenario</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>The classic example: consider twin bothers -<br>
+
+<ul>
+<li>One twin (the stationary observer) remains on Earth, while the other twin (the traveler) boards a spacecraft that travels at a certain percentage of the speed of light. </li>
+<li>After traveling for a certain period of time at a certain speed, the traveler returns to Earth and reunites with the stationary observer twin</li>
+</ul></li>
+<li>Assuming the traveler travels at 80% of the speed of light, for a duration of 10 years, the resulting time dilation calculation and effect is as follows:</li>
+</ul>
+
+<pre><code class="r">speedOfLight &lt;- 299792458 / 1000 # speed of light in vacuum (In Kilometers Per Second) 
+percent &lt;- 0.8; years &lt;- 10
+travelingSpeed &lt;- percent * speedOfLight
+timeDilationFactor &lt;- (1 / sqrt(1 - (travelingSpeed^2 / speedOfLight^2) ))
+durationFromStationaryObserverPerspective &lt;- timeDilationFactor * years
+sprintf(&quot;Elasped years from stationary observer perspective: %1$1.2f&quot;, durationFromStationaryObserverPerspective)
+</code></pre>
+
+<pre><code>## [1] &quot;Elasped years from stationary observer perspective: 16.67&quot;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>3. Using the Time Dilation Calculator</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>The calculator requires two input parameters (visualized as sliders):
+
+<ol>
+<li>Traveling speed (as a % of the speed of light in a vacuum)</li>
+<li>Duration of travel (in years, from the perspective of the traveler)</li>
+</ol></li>
+<li>The X axis of the graph illustrates the input of the speed as a percent of the speed of light 
+
+<ul>
+<li>(0 to 99.9, since 100% of the speed of light is not calculable)</li>
+</ul></li>
+<li>The Y axis of the graph displays the server-side calculated time dilation factor
+
+<ul>
+<li>(i.e. how much time dilates from the perspective of the stationary observer compared to the traveler)</li>
+</ul></li>
+</ul>
+
+<p><br/>
+Link: <a href="http://dannycohen.shinyapps.io/Time_Dilation_Calculator">ShinyApps.io Time Dilation Calculator</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Agenda'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='1. Introduction: Why time dilation ?'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='2. Example scenario'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='3. Using the Time Dilation Calculator'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
